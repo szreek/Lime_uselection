@@ -15,7 +15,7 @@ task("deploy-testnets", "Deploys contract on a provided network")
 task("deploy-mainnet", "Deploys contract on a provided network")
     .addParam("privateKey", "Please provide the private key")
     .setAction(async ({privateKey}) => {
-         const deployElectionContract = require("./scripts/deploy-with-param");
+         const deployElectionContract = require("./scripts/deploy-with-params");
           await deployElectionContract(privateKey);
       });
 
@@ -45,7 +45,7 @@ module.exports = {
     },
     goerli: {
       url: "https://goerli.infura.io/v3/4d5caad6cbc645eba02a8cd5dc0036bb",
-      accounts: ['348c1477aecddec26f5f729023585580dea261dff10a607a947216a41a24d778']
+      accounts: ['de7d5d62886cdbd7e2709c4f24ed5bc5e1e98a9414fcd8492601ac3c59fdf523']
     }
   },
 

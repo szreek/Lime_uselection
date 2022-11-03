@@ -17,6 +17,20 @@ const run = async function() {
     console.log("The election has ended:", hasEnded)
     const haveResultsForOhio = await electionContract.resultsSubmitted("Ohio")
     console.log("Have results for Ohio:", haveResultsForOhio)   
+
+
+    const transactionOhio = await electionContract.submitStateResult(["Ohio", 250, 150, 24]);
+    const transactionReceipt = await transactionOhio.wait();
+    if (transactionReceipt.status != 1) { // 1 means success
+    console.log("Transaction was not successful")
+    return 
+    }
+    
+    const resultsSubmittedOhioNew = await electionContract.resultsSubmitted("Ohio")
+    console.log("Results submitted for Ohio", resultsSubmittedOhioNew)
+    
+    const currentLeader = await electionContract.currentLeader()
+    console.log("Current leader", currentLeader)    
 }
     
 run()
