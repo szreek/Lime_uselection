@@ -39,9 +39,9 @@ module.exports = {
 };
 
 module.exports = {
-  defaultNetwork: "hardhat",
+  defaultNetwork: "localhost",
   networks: {
-    hardhat: {
+    localhost: {
     },
     goerli: {
       url: "https://goerli.infura.io/v3/4d5caad6cbc645eba02a8cd5dc0036bb",
