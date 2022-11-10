@@ -4,6 +4,7 @@ pragma abicoder v2;
 //import "./Ownable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
+//deployed to goerli 0x6c3b2f6e4f41C2965A3bAE38D9a7cD21d4389032
 contract USElection is Ownable {
     uint8 public constant BIDEN = 1;
     uint8 public constant TRUMP = 2;
